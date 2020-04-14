@@ -1,6 +1,5 @@
-var LatLon = require('geodesy').LatLonSpherical;
-var fs = require('fs');
-
+import LatLon from 'geodesy/latlon-spherical.js';
+import fs from 'fs';
 var path = process.cwd();
 
 var elements = ["giza", "kailash", "shasta", "angkor", "stonehenge", "uluru", "easter"]
@@ -31,12 +30,12 @@ easter.color = [255, 0, 255, 200]
 
 var height = 0.0;
 
-for (start of elements) {
-	for (destination of toDo) {
+for (var start of elements) {
+	for (var destination of toDo) {
 		var sp = eval(start).coords;
 		var dp = eval(destination).coords;
 		var d = sp.distanceTo(dp);
-		var bearing = sp.bearingTo(dp);
+		var bearing = sp.initialBearingTo(dp);
 		var bearing90 = bearing + 90;
 		var finalbearing = sp.finalBearingTo(dp);
 		var finalbearing90 = finalbearing + 90;
@@ -109,8 +108,4 @@ for (start of elements) {
 	}
 	toDo.shift();
 }
-
-return;
-
-
 
