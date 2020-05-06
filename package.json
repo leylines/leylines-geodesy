@@ -2,11 +2,13 @@
   "name": "leylines-geodesy",
   "version": "1.0.0",
   "description": "",
-  "main": "circles.js",
+  "main": "leylines-geodesy.js",
   "type": "module",
   "devDependencies": {
     "fs": "",
-    "geodesy": "^2.2.0"
+    "geodesy": "^2.2.0",
+    "table": "^5.4.6",
+    "yargs": "^15.3.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
