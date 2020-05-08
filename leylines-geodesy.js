@@ -4,7 +4,7 @@
 import yargs from 'yargs';
 import { points, grid, fibonacci } from './lib/loxodrome.mjs';
 import { greatcircles, circle } from './lib/circles.mjs';
-import { calculateGridPoints } from './lib/platonics.mjs';
+import { calculatePlatonic } from './lib/platonics.mjs';
 import { createCzmlHeader } from './lib/czml.mjs';
 import fs from 'fs';
 
@@ -29,6 +29,7 @@ const argv = yargs
   })
   .command('greatcircles', 'calculate big circles')
   .command('cube', 'calculate cube')
+  .command('beckerhagens', 'calculate beckerhagens')
   .command('circle', 'calculate circle of 3 points', {
     midpoint: {
       alias: 'mp',
@@ -149,7 +150,7 @@ if (['greatcircles', 'circle'].includes(command)) {
   filename += ".czml";
 }
 
-if (['cube'].includes(command)) {
+if (['cube', 'beckerhagens'].includes(command)) {
   filename = "platonic-" + command + "-" + sp;
   if (!b) {
     filename += "-" + dp 
@@ -158,7 +159,11 @@ if (['cube'].includes(command)) {
   }
   switch(command) {
     case 'cube':
-      var result = calculateGridPoints(allpoints, sp, dp, 'cube');
+      var result = calculatePlatonic(allpoints, sp, dp, 'cube');
+      czml = czml.concat(result);
+      break;
+    case 'beckerhagens':
+      var result = calculatePlatonic(allpoints, sp, dp, 'beckerhagens');
       czml = czml.concat(result);
       break;
   }
