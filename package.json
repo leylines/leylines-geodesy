@@ -4,6 +4,10 @@
   "description": "",
   "main": "leylines-geodesy.js",
   "type": "module",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
   "devDependencies": {
     "fs": "",
     "geodesy": "^2.2.0",
