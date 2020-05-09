@@ -30,6 +30,9 @@ const argv = yargs
   .command('greatcircles', 'calculate big circles')
   .command('cube', 'calculate cube')
   .command('beckerhagens', 'calculate beckerhagens')
+  .command('tetrahedron', 'calculate tetrahedron')
+  .command('octahedron', 'calculate octahedron')
+  .command('icosahedron', 'calculate icosahedron')
   .command('circle', 'calculate circle of 3 points', {
     midpoint: {
       alias: 'mp',
@@ -70,6 +73,7 @@ const argv = yargs
   })
   .help()
   .alias('help', 'h')
+  .demand(1, "You must provide a valid command")
   .argv;
 
 var command = process.argv[2]
@@ -150,7 +154,7 @@ if (['greatcircles', 'circle'].includes(command)) {
   filename += ".czml";
 }
 
-if (['cube', 'beckerhagens'].includes(command)) {
+if (['cube', 'beckerhagens', 'icosahedron', 'tetrahedron', 'octahedron'].includes(command)) {
   filename = "platonic-" + command + "-" + sp;
   if (!b) {
     filename += "-" + dp 
@@ -164,6 +168,18 @@ if (['cube', 'beckerhagens'].includes(command)) {
       break;
     case 'beckerhagens':
       var result = calculatePlatonic(allpoints, sp, dp, 'beckerhagens');
+      czml = czml.concat(result);
+      break;
+    case 'icosahedron':
+      var result = calculatePlatonic(allpoints, sp, dp, 'icosahedron');
+      czml = czml.concat(result);
+      break;
+    case 'tetrahedron':
+      var result = calculatePlatonic(allpoints, sp, dp, 'tetrahedron');
+      czml = czml.concat(result);
+      break;
+    case 'octahedron':
+      var result = calculatePlatonic(allpoints, sp, dp, 'octahedron');
       czml = czml.concat(result);
       break;
   }
