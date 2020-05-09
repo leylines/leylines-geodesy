@@ -1,6 +1,6 @@
 # leylines-geodesy
 
-`
+```
 leylines-geodesy.js <command>
 
 Kommandos:
@@ -24,4 +24,4 @@ Options:
   --distanceconditions, --dc  show grids depending on distance to camera
                                                      [boolean] [Standard: false]
   --help, -h                  Hilfe anzeigen                           [boolean]
-`
+```
