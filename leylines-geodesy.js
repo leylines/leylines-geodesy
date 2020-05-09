@@ -27,12 +27,13 @@ const argv = yargs
       demand: true
     }
   })
-  .command('greatcircles', 'calculate big circles')
-  .command('cube', 'calculate cube')
   .command('beckerhagens', 'calculate beckerhagens')
-  .command('tetrahedron', 'calculate tetrahedron')
-  .command('octahedron', 'calculate octahedron')
+  .command('cube', 'calculate cube')
+  .command('dodecahedron', 'calculate dodecahedron')
   .command('icosahedron', 'calculate icosahedron')
+  .command('octahedron', 'calculate octahedron')
+  .command('tetrahedron', 'calculate tetrahedron')
+  .command('greatcircles', 'calculate big circles')
   .command('circle', 'calculate circle of 3 points', {
     midpoint: {
       alias: 'mp',
@@ -126,9 +127,7 @@ if (['points', 'grid', 'fibonacci'].includes(command)) {
       break;
   }
   filename += ".czml";
-}
-
-if (['greatcircles', 'circle'].includes(command)) {
+} else if (['greatcircles', 'circle'].includes(command)) {
   filename = command + "-" + sp;
   if (!b) {
     filename += "-" + dp 
@@ -152,38 +151,19 @@ if (['greatcircles', 'circle'].includes(command)) {
       break;
   }
   filename += ".czml";
-}
-
-if (['cube', 'beckerhagens', 'icosahedron', 'tetrahedron', 'octahedron'].includes(command)) {
+} else if (['cube', 'dodecahedron', 'beckerhagens', 'icosahedron', 'tetrahedron', 'octahedron'].includes(command)) {
   filename = "platonic-" + command + "-" + sp;
   if (!b) {
     filename += "-" + dp 
   } else {
     filename += "-" + b;
   }
-  switch(command) {
-    case 'cube':
-      var result = calculatePlatonic(allpoints, sp, dp, 'cube');
-      czml = czml.concat(result);
-      break;
-    case 'beckerhagens':
-      var result = calculatePlatonic(allpoints, sp, dp, 'beckerhagens');
-      czml = czml.concat(result);
-      break;
-    case 'icosahedron':
-      var result = calculatePlatonic(allpoints, sp, dp, 'icosahedron');
-      czml = czml.concat(result);
-      break;
-    case 'tetrahedron':
-      var result = calculatePlatonic(allpoints, sp, dp, 'tetrahedron');
-      czml = czml.concat(result);
-      break;
-    case 'octahedron':
-      var result = calculatePlatonic(allpoints, sp, dp, 'octahedron');
-      czml = czml.concat(result);
-      break;
-  }
+  var result = calculatePlatonic(allpoints, sp, dp, command);
+  czml = czml.concat(result);
   filename += ".czml";
+} else {
+  yargs.showHelp();
+  process.exit(1)
 }
 /*
 var tabledata = [
