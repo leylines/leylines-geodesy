@@ -1,0 +1,61 @@
+{
+  "source": {
+    "include": ["lib", "package.json", "README.md", "index.js"],
+    "includePattern": ".+\\.(m?js(doc|x)?)$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": true
+  },
+  "opts": {
+    "template": "node_modules/docdash",
+    "destination": "../leylines-docs/jsdoc/"
+  },
+  "docdash": {
+    "static": true,
+    "sort": true,
+    "sectionOrder": [
+      "Classes",
+      "Modules",
+      "Externals",
+      "Events",
+      "Namespaces",
+      "Mixins",
+      "Tutorials",
+      "Interfaces"
+    ],
+    "disqus": "",
+    "openGraph": {
+      "title": "Leylines-Documentation",
+      "type": "website",
+      "image": "",
+      "site_name": "",
+      "url": ""
+    },
+    "meta": {
+      "title": "Leylines-Documentation",
+      "description": "",
+      "keyword": ""
+    },
+    "search": true,
+    "collapse": true,
+    "wrap": false,
+    "typedefs": true,
+    "navLevel": -1,
+    "private": true,
+    "removeQuotes": "none",
+    "scripts": [],
+    "menu": {
+      "leylines.net": {
+        "href":"https://www.leylines.net",
+        "target":"_blank",
+        "class":"menu-item",
+        "id":"website_link"
+      }
+    }
+  }
+}

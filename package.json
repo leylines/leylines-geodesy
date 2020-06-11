@@ -3,21 +3,14 @@
   "version": "0.1.0",
   "description": "geodesy module for calculating global leylines",
   "preferGlobal": true,
-  "bin": {
-    "leylines-geodesy": "leylines-geodesy.js"
-  },
+  "main": "index.js",
   "type": "module",
   "engines": {
     "node": ">=13.0.0",
     "npm": ">=6.0.0"
   },
   "dependencies": {
-    "chalk": "^4.0.0",
-    "fs": "^0.0.2",
-    "geodesy": "^2.2.1",
-    "require-dir": "^1.2.0",
-    "table": "^5.4.6",
-    "yargs": "^15.3.1"
+    "geodesy": "^2.2.1"
   },
   "repository": {
     "type": "git",
@@ -28,5 +21,14 @@
   "bugs": {
     "url": "https://github.com/leylines/leylines-geodesy/issues"
   },
-  "homepage": "https://github.com/leylines/leylines-geodesy#readme"
+  "homepage": "https://github.com/leylines/leylines-geodesy#readme",
+  "devDependencies": {
+    "docdash": "^1.2.0",
+    "eslint": "^7.2.0",
+    "jsdoc": "^3.6.4",
+    "toast-jsdoc": "^1.0.2"
+  },
+  "scripts": {
+    "create-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+  }
 }
