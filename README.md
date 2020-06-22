@@ -1,5 +1,8 @@
 # leylines-geodesy
 
+![Lint Code Base](https://github.com/leylines/leylines-geodesy/workflows/Lint%20Code%20Base/badge.svg?branch=master)
+
+
 ```
 leylines-geodesy.js <command>
 
