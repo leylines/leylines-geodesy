@@ -13,7 +13,7 @@
   },
   "opts": {
     "template": "node_modules/docdash",
-    "destination": "../leylines-docs/jsdoc/"
+    "destination": "../leylines-docs/"
   },
   "docdash": {
     "static": true,

@@ -29,6 +29,6 @@
     "toast-jsdoc": "^1.0.2"
   },
   "scripts": {
-    "create-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+    "publish-doc": "bash -c \"rm -rf ../leylines-docs/@leylines/leylines-geodesy && node_modules/.bin/jsdoc -c jsdoc.json  && cd ../leylines-docs && git add . && git commit -m 'Generate Documentation' && git push -f origin HEAD:gh-pages\""
   }
 }
