@@ -23,10 +23,7 @@
   },
   "homepage": "https://github.com/leylines/leylines-geodesy#readme",
   "devDependencies": {
-    "docdash": "^1.2.0",
-    "eslint": "^7.2.0",
-    "jsdoc": "^3.6.4",
-    "toast-jsdoc": "^1.0.2"
+    "eslint": "^7.2.0"
   },
   "scripts": {
     "publish-doc": "bash -c \"rm -rf ../leylines-docs/@leylines/leylines-geodesy && node_modules/.bin/jsdoc -c buildprocess/jsdoc.json  && cd ../leylines-docs && git add . && git commit -m 'Generate Documentation' && git push -f origin HEAD:gh-pages\""
