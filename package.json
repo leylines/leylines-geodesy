@@ -1,5 +1,5 @@
 {
-  "name": "@leylines/leylines-geodesy",
+  "name": "leylines-geodesy",
   "version": "0.1.0",
   "description": "geodesy module for calculating global leylines",
   "preferGlobal": true,
@@ -26,6 +26,6 @@
     "eslint": "^7.2.0"
   },
   "scripts": {
-    "publish-doc": "bash -c \"rm -rf ../leylines-docs/@leylines/leylines-geodesy && node_modules/.bin/jsdoc -c buildprocess/jsdoc.json  && cd ../leylines-docs && git add . && git commit -m 'Generate Documentation' && git push -f origin HEAD:gh-pages\""
+    "publish-doc": "bash -c \"rm -rf ../leylines-docs/leylines-geodesy && node_modules/.bin/jsdoc -c buildprocess/jsdoc.json  && cd ../leylines-docs && git add . && git commit -m 'Generate Documentation' && git push -f origin HEAD:gh-pages\""
   }
 }
