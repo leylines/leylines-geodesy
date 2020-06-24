@@ -1,5 +1,5 @@
 {
-  "name": "@leylines/leylines-geodesy",
+  "name": "leylines-geodesy",
   "version": "0.1.0",
   "description": "geodesy module for calculating global leylines",
   "preferGlobal": true,
