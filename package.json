@@ -17,7 +17,7 @@
     "url": "git+https://github.com/leylines/leylines-geodesy.git"
   },
   "author": "Joerg Roth",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/leylines/leylines-geodesy/issues"
   },
